@@ -17,7 +17,7 @@ def get_from_cache(url, file_name):
 
 html = get_from_cache("http://www.nytimes.com/pages/todayspaper/index.html", 'nyt_frontpage.html')
 soup = BeautifulSoup(html, 'html.parser')
-front_page_section = soup.find("div", {"class": "aColumn"})
+front_page_section = soup.find("div", {"class": "aColumn"}) # front_page_section is still a soup object
 # print(front_page_section)
 list_of_stories = front_page_section.find_all("div", {"class": "story"})
 # print(list_of_stories)
@@ -74,8 +74,3 @@ for story in list_of_stories:
 
 
 
-
-
-# for story in stories:
-#     print(story)
-#     print('-'*10)
